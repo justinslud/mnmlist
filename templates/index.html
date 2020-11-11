@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+<!-- {% block content_title %}{% endblock %} -->
+{% block content %} 
+
+<header>
+    <h1><a href="{{ SITEURL }}" id="site-title">{{ SITENAME }}<!--  {% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %} --></a>
+</header>
+
+<!-- <h2>Get Started</h2> -->
+
+
+<section id="article-list">
+<h2>All posts</h2>
+ <ol>       
+
+{% for article in articles %}        
+    <li><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></li>
+{% endfor %}
+
+</ol>
+</section>
+
+{% endblock content %}
